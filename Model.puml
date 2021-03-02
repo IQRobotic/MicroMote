@@ -1,0 +1,26 @@
+@startuml name "MicroMote Control"
+skinparam PackageStyle rect
+skinparam Padding 60
+left to right direction
+scale 1
+actor Me as Mobile
+entity ESP32
+rectangle NodeRed {
+    Mobile .> (NodeRed) : Internet - Mobile & Desktop Application
+}
+rectangle "RabbitMQ"{
+    (NodeRed) <. (RabbitMQ) : Subscribe
+    (NodeRed) .> (RabbitMQ) : Publish
+    ESP32 .> (RabbitMQ) : Publish
+    ESP32 <. (RabbitMQ) : Subscribe
+}
+note right of NodeRed
+Change each LED Color
+endnote
+note left of ESP32
+Parse Json then Extract Variables & Save them
+endnote
+note right of ESP32
+Encode Json and Publish
+endnote
+@enduml

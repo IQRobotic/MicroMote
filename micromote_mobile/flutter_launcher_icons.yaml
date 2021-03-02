@@ -1,0 +1,6 @@
+flutter_icons:
+  android: "launcher_icon" 
+  ios: true
+  image_path: "assets/icon/LED-512x512.png"
+  adaptive_icon_background: "assets/icon/LED-Foreground-512x512.png" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "assets/icon/icon-foreground-432x432.png" # only available for Android 8.0 devices and above
